@@ -134,6 +134,7 @@ class Execution(Chrome):
         obj.run()
         obj.login()
         obj.user3()
+        obj.sidebar()
 
     else:
         print("Invalid Credentials")
