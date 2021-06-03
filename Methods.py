@@ -28,6 +28,7 @@ class Chrome:
         self.driver.find_element_by_class_name('product_sort_container').click()
         self.driver.find_element_by_css_selector(
             "div.page_wrapper div.header_container:nth-child(1) div.header_secondary_container div.right_component span.select_container select.product_sort_container > option:nth-child(4)").click()
+        self.driver.find_element_by_id(d)
         self.driver.find_element_by_id("add-to-cart-sauce-labs-fleece-jacket").click()
         self.driver.find_element_by_css_selector(
             "div.page_wrapper div:nth-child(1) div.header_container:nth-child(1) div.primary_header div.shopping_cart_container:nth-child(3) > a.shopping_cart_link").click()
