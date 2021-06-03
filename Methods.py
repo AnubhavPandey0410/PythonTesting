@@ -28,7 +28,10 @@ class Chrome:
         self.driver.find_element_by_class_name('product_sort_container').click()
         self.driver.find_element_by_css_selector(
             "div.page_wrapper div.header_container:nth-child(1) div.header_secondary_container div.right_component span.select_container select.product_sort_container > option:nth-child(4)").click()
-        self.driver.find_element_by_id(d)
+        #self.driver.execute_script("window.scrollBy(0,1000)","")
+        tshirt=self.driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[2]/div[1]/a[1]/div[1]")
+        self.driver.execute_script("arguments[0].scrollIntoView();",tshirt)
+        self.driver.find_element_by_id("add-to-cart-sauce-labs-onesie").click()
         self.driver.find_element_by_id("add-to-cart-sauce-labs-fleece-jacket").click()
         self.driver.find_element_by_css_selector(
             "div.page_wrapper div:nth-child(1) div.header_container:nth-child(1) div.primary_header div.shopping_cart_container:nth-child(3) > a.shopping_cart_link").click()
@@ -36,7 +39,12 @@ class Chrome:
         self.driver.find_element_by_id("first-name").send_keys("Anubhav")
         self.driver.find_element_by_id("last-name").send_keys("Pandey")
         self.driver.find_element_by_id("postal-code").send_keys("201309")
+        #p1= self.driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[2]/div[2]").text
         self.driver.find_element_by_id("continue").click()
+        number=self.driver.find_element_by_class_name("shopping_cart_badge")
+        print(number)
+        Quantity=self.driver.find_element_by_class_name("cart_quantity")
+        print(Quantity)
         self.driver.find_element_by_id("finish").click()
         self.driver.find_element_by_id("back-to-products").click()
         print("Thank you for shopping")
